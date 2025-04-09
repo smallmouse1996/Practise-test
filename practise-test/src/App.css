@@ -1,0 +1,375 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Header.css */
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  background-color: #343a40;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: white;
+}
+
+/* Top Menu - Banner */
+.top-menu {
+  width: 100%; /* Full width */
+  height: 200px; /* Set fixed height for the banner */
+  background-color: #007bff;
+  margin-left: 220px; /* To avoid overlapping with the sidebar */
+  padding: 0;
+}
+
+.banner-image {
+  width: 100%;       /* Ensures the image fills the width of the container */
+  height: 100%;      /* Adjusts the height to cover the space */
+  object-fit: cover; /* Ensures the image covers the area properly */
+}
+
+/* Main content */
+.main-content {
+  margin-left: 220px; /* Sidebar width */
+  padding-top: 220px; /* Space for the top menu (banner) */
+  padding: 20px;
+}
+
+/* Link Box */
+.link-box {
+  display: flex; /* Use flexbox to display links in columns */
+  flex-wrap: wrap;
+  justify-content: space-between; /* Space between the links */
+  gap: 20px; /* Optional: add gap between the items */
+  padding: 20px;
+  background-color: #f8f9fa; /* Background color for the box */
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow for effect */
+  margin-top: 20px; /* Add some spacing from previous content */
+}
+
+.link-item {
+  flex: 0 0 calc(50% - 10px); /* 2 items per row */
+  text-align: center; /* Center the link inside each column */
+}
+
+.link-item a {
+  display: block;
+  padding: 10px;
+  color: #007bff; /* Link color */
+  text-decoration: none;
+  border: 1px solid #007bff; /* Optional: border around the link */
+  border-radius: 4px; /* Rounded corners for the link */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.link-item a:hover {
+  background-color: #007bff;
+  color: white; /* Change text color on hover */
+}
+
+/* TestPage.css */
+.test-page {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.question-container {
+  margin-left: 240px; /* Adjusted margin to avoid the sidebar */
+  flex: 1;
+  padding: 20px;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.question select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* Styling radio buttons */
+.radio-option {
+  margin-bottom: 15px;
+  font-size: 18px; /* Increased font size */
+}
+
+.radio-option input[type="radio"] {
+  appearance: none; /* Remove default radio button */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+  background-color: white;
+  position: relative;
+  cursor: pointer;
+  margin-right: 10px;
+  vertical-align: middle;
+  transition: all 0.3s ease-in-out;
+}
+
+.radio-option input[type="radio"]:checked {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.radio-option label {
+  font-size: 18px; /* Larger font size */
+  cursor: pointer;
+  font-weight: 500; /* Bold text */
+}
+
+/* Adjusting the layout of the navigation buttons */
+.navigation-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start; /* Aligns buttons to the left */
+  gap: 10px; /* Reduced gap between the buttons */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.submit-button button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.question-list {
+  flex: 0 0 10%; /* Gridbox now takes up 20% of the width */
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+/* Reduce the size of grid items and adjust the grid layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Adjust grid to fit more items */
+  gap: 5px; /* Reduced gap between grid items */
+  font-size: 12px; /* Decrease font size inside grid items */
+}
+
+.grid-item {
+  padding: 5px; /* Smaller padding for the grid items */
+  text-align: center;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px; /* Smaller font size */
+  transition: background-color 0.3s ease;
+}
+
+/* Highlight grid items that are answered */
+.grid-item.answered {
+  background-color: #28a745;
+}
+
+/* Hover effects */
+.grid-item:hover {
+  background-color: #0056b3;
+}
+
+.grid-item.answered:hover {
+  background-color: #218838;
+}
+
+/* Center Login title */
+.login-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; /* Center the Login text horizontally */
+  margin-bottom: 20px; /* Space between title and form */
+}
+
+/* Container for the Login Page */
+.login-container {
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertically center */
+  flex-direction: column; /* Stack the login title and form */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Styling for the login form */
+.login-form {
+  width: 300px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input group styling */
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.input-group input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Login button styling */
+.login-button {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+/* Styling for Forgot Password */
+.forgot-password-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.forgot-password-link {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* Styling for the Sign Up section */
+.signup-container {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.signup-button {
+  display: inline-block;
+  padding: 10px;
+  background-color: #28a745; /* Green button */
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.signup-button:hover {
+  background-color: #218838;
+}
+
+.signup-container p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
